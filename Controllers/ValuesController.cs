@@ -13,18 +13,20 @@ namespace FunWebApi.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
-            
+        
 
-            return new string[] { "asasdasd", "value" };
+        // await 
+            return  new string[] { "value1", "valueqq" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task <ActionResult<string>> Get(int id)
         {
-            return "i am idfff ";
+             // await 
+            return "value";
         }
 
         // POST api/values
