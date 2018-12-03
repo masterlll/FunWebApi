@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FunWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FunWebApi.Controllers
@@ -14,15 +15,16 @@ namespace FunWebApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-        
-            return new string[] { "value1", "valueqq" };
+            
+
+            return new string[] { "asasdasd", "value" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "i am idfff ";
         }
 
         // POST api/values
@@ -42,5 +44,7 @@ namespace FunWebApi.Controllers
         public void Delete(int id)
         {
         }
+
+
     }
 }
