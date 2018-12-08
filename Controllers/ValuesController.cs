@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FunWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FunWebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace FunWebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
-            var value = _context.values.ToList();
+            var value = await _context.values.ToListAsync();
             // await 
             return Ok(value);
         }
@@ -32,7 +33,7 @@ namespace FunWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValues(int id)
         {
-            var value = _context.values.FirstOrDefault(x=>x.Id ==id);
+            var value =  await _context.values.FirstOrDefaultAsync(x=>x.Id ==id);
             // await 
             return Ok(value);
         }
