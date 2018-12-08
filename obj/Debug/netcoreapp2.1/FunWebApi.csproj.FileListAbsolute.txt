@@ -12,3 +12,17 @@ D:\Work\DoNET\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.AssemblyInfo.cs
 D:\Work\DoNET\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.RazorTargetAssemblyInfo.cache
 D:\Work\DoNET\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.dll
 D:\Work\DoNET\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.pdb
+C:\NetWork\FunWebApi\bin\Debug\netcoreapp2.1\FunWebApi.deps.json
+C:\NetWork\FunWebApi\bin\Debug\netcoreapp2.1\FunWebApi.runtimeconfig.json
+C:\NetWork\FunWebApi\bin\Debug\netcoreapp2.1\FunWebApi.runtimeconfig.dev.json
+C:\NetWork\FunWebApi\bin\Debug\netcoreapp2.1\FunWebApi.dll
+C:\NetWork\FunWebApi\bin\Debug\netcoreapp2.1\FunWebApi.pdb
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.csprojAssemblyReference.cache
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.csproj.CoreCompileInputs.cache
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.RazorAssemblyInfo.cache
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.RazorAssemblyInfo.cs
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.AssemblyInfoInputs.cache
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.AssemblyInfo.cs
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.RazorTargetAssemblyInfo.cache
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.dll
+C:\NetWork\FunWebApi\obj\Debug\netcoreapp2.1\FunWebApi.pdb

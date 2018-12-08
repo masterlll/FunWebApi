@@ -19,12 +19,18 @@ namespace FunWebApi.Controllers
             _context = context;
 
         }
+        [HttpGet("test")]
+        public IActionResult Test(string test )
+        {
+            // await 
+            return Ok("test is ok");
+        }
 
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
-            var value = await _context.values.ToListAsync();
+            var value = await  _context.values.ToListAsync();
             // await 
             return Ok(value);
         }
@@ -33,10 +39,11 @@ namespace FunWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValues(int id)
         {
-            var value =  await _context.values.FirstOrDefaultAsync(x=>x.Id ==id);
-            // await 
-            return Ok(value);
+            var value = await _context.values.FirstOrDefaultAsync(x=>x.Id ==id);
+          //  await 
+           return Ok(value);
         }
+
 
         // POST api/values
         [HttpPost]
