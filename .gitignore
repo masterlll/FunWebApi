@@ -2,4 +2,7 @@
 /bin/
 .cache
 obj/Debug
-.vscode/*
+.vscode
+bin 
+obj
+*.db
