@@ -1,7 +1,9 @@
 
 /bin/
 .cache
+bin/Debug
 obj/Debug
+
 .vscode
 bin 
 obj
