@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FunWebApi.Models;
+using FunWebApi.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FunWebApi.Controllers
 {
@@ -11,23 +13,38 @@ namespace FunWebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly DataContext _context;
+
+        public ValuesController(DataContext context)
+        {
+            _context = context;
+
+        }
+        [HttpGet("test")]
+        public IActionResult Test(string test )
+        {
+            // await 
+            return Ok("test is ok");
+        }
+
         // GET api/values
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<string>>> Get()
+        public async Task<IActionResult> GetValues()
         {
-        
-
-        // await 
-            return  new string[] { "value1", "valueqq" };
+            var value = await  _context.Values.ToListAsync();
+            // await 
+            return Ok(value);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task <ActionResult<string>> Get(int id)
+        public async Task<IActionResult> GetValues(int id)
         {
-             // await 
-            return "value";
+            var value = await _context.Values.FirstOrDefaultAsync(x=>x.Id ==id);
+          //  await 
+           return Ok(value);
         }
+
 
         // POST api/values
         [HttpPost]

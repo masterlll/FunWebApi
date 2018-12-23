@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using FunWebApi.Models;
 
-namespace FunWebApi.Models
+
+namespace FunWebApi.Data
 {
     public class DataContext : DbContext
     {
@@ -13,7 +15,9 @@ namespace FunWebApi.Models
 
        
 
-       public DbSet<Value> values {get;set;}
+
+       public DbSet<Value> Values {get;set;}
+       public DbSet<User> Users  { get; set; }
     }
 
 }
