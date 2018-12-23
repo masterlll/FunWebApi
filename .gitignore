@@ -1,9 +1,0 @@
-
-/bin/
-.cache
-obj/Debug
-bin/Debug
-.vscode
-bin 
-obj
-*.db
