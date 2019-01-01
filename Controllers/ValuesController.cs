@@ -6,9 +6,12 @@ using FunWebApi.Models;
 using FunWebApi.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FunWebApi.Controllers
 {
+
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -37,6 +40,7 @@ namespace FunWebApi.Controllers
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValues(int id)
         {
