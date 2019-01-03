@@ -23,6 +23,7 @@ namespace FunWebApi.Controllers
             _context = context;
 
         }
+         [AllowAnonymous]
         [HttpGet("test")]
         public IActionResult Test(string test )
         {
