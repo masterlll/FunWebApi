@@ -4,8 +4,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:6524",
-      "sslPort": 44305
+      "applicationUrl": "http://localhost:18029",
+      "sslPort": 44350
     }
   },
   "profiles": {
@@ -17,13 +17,13 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "FunWebApi": {
+    "DatingApp.API": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/values",
       "applicationUrl": "http://localhost:4000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     }
   }
