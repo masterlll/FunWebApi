@@ -45,7 +45,6 @@ namespace FunWebApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
         {
-               throw new Exception("aaa");
                 var userRepo = await _repo.Login(userLoginDto.username, userLoginDto.password);
                 if (userRepo == null) return Unauthorized();
                 var claims = new[]
