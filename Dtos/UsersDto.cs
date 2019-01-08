@@ -11,8 +11,10 @@ namespace FunWebApi.Dtos
         public string password { get; set; }
     }
     public class UserLoginDto
-    {
+    { [Required]
         public string username { get; set; }
+            [Required]
+        [StringLength(10, MinimumLength = 8, ErrorMessage = "your password length err ")]
         public string password { get; set; }
     }
 
