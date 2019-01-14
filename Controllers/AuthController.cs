@@ -26,11 +26,10 @@ namespace FunWebApi.Controllers
 
         }
         [HttpPost("register")]
-
         public async Task<IActionResult> Register(UsersDto UsersDto)
         {
 
-            UsersDto.username = UsersDto.username.ToLower(); // English version 
+         //   UsersDto.username = UsersDto.username.ToLower(); // English version 
 
             if (await _repo.UserExist(UsersDto.username)) return BadRequest("Username already exists");
 

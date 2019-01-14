@@ -23,7 +23,7 @@ namespace FunWebApi.Controllers
             _context = context;
 
         }
-         [AllowAnonymous]
+        [AllowAnonymous]
         [HttpGet("test")]
         public IActionResult Test(string test )
         {
@@ -33,6 +33,7 @@ namespace FunWebApi.Controllers
 
         // GET api/values
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetValues()
         {
             var value = await  _context.Values.ToListAsync();
