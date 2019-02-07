@@ -29,7 +29,7 @@ namespace FunWebApi.Controllers
         public async Task<IActionResult> Register(UsersDto UsersDto)
         {
 
-         //   UsersDto.username = UsersDto.username.ToLower(); // English version 
+            //   UsersDto.username = UsersDto.username.ToLower(); // English version 
 
             if (await _repo.UserExist(UsersDto.username)) return BadRequest("Username already exists");
 
@@ -44,40 +44,31 @@ namespace FunWebApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserLoginDto userLoginDto)
         {
-                var userRepo = await _repo.Login(userLoginDto.username, userLoginDto.password);
-                if (userRepo == null) return Unauthorized();
-                var claims = new[]
-                {
-
+            var userRepo = await _repo.Login(userLoginDto.username, userLoginDto.password);
+            if (userRepo == null) return Unauthorized();
+            var claims = new[]
+            {
              new Claim (ClaimTypes.NameIdentifier,userRepo.Id.ToString()),
              new Claim (ClaimTypes.Name,userRepo.Username)
-
              };
 
-                var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
-                var creds = new SigningCredentials(Key, SecurityAlgorithms.HmacSha512Signature);
+            var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
+            var creds = new SigningCredentials(Key, SecurityAlgorithms.HmacSha512Signature);
 
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.Now.AddDays(30),
-                    SigningCredentials = creds
-                };
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(30),
+                SigningCredentials = creds
+            };
 
+            var tokenhandler = new JwtSecurityTokenHandler();
+            var token = tokenhandler.CreateToken(tokenDescriptor);
+            return Ok(new
+            {
+                token = tokenhandler.WriteToken(token)
 
-                var tokenhandler = new JwtSecurityTokenHandler();
-
-                var token = tokenhandler.CreateToken(tokenDescriptor);
-
-                return Ok(new
-                {
-                    token = tokenhandler.WriteToken(token)
-
-                });
-
-
-         
-
+            });
 
         }
     }

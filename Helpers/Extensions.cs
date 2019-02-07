@@ -11,5 +11,12 @@ namespace FunWebApi.Helpers
             response.Headers.Add("Access-Control-Expose-Headers", "Application-Error");
             response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
+
+        public static int CalculateAge(this DateTime InputDatetime)
+        {
+            var age = DateTime.Today.Year - InputDatetime.Year;
+            if (InputDatetime.AddYears(age) > DateTime.Today) age--;
+            return age;
+        }
     }
 }
