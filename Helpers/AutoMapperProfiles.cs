@@ -29,6 +29,8 @@ namespace FunWebApi.Helpers
             
             CreateMap<Photo, PhotoForDetailedDto>();
 
+            CreateMap<UserForUpdateDto,User >();
+
         }
 
     }
