@@ -43,6 +43,7 @@ namespace FunWebApi
             services.AddCors();
             services.AddAutoMapper();
             services.AddTransient<Seed>();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
                  
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();

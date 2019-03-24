@@ -44,29 +44,26 @@ namespace FunWebApi.Controllers
             var user = await _repo.GetUser(id);
 
 
+            Console.Write("casccas");
             var UserToReturn = _mapper.Map<UserForDetailedDto>(user);
 
             return Ok(UserToReturn);
         }
 
-           [HttpPut("{id}")]
+        [HttpPut("{id}")]
 
-           public async Task<IActionResult> UpdateUser(int id , UserForUpdateDto UserForUpdateDto)
-           {
-              if (id!= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) return  Unauthorized();
-            
-              var userFromRepo = await _repo.GetUser(id);
+        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto UserForUpdateDto)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) return Unauthorized();
 
-              _mapper.Map(UserForUpdateDto , userFromRepo);
+            var userFromRepo = await _repo.GetUser(id);
 
-              if(await _repo.SaveAll()) return NoContent();
+            _mapper.Map(UserForUpdateDto, userFromRepo);
 
-              throw new Exception($"UPdating user {id} failed on save ");
-           }
+            if (await _repo.SaveAll()) return NoContent();
 
-
-
-
+            throw new Exception($"UPdating user {id} failed on save ");
+        }
     }
 
 }

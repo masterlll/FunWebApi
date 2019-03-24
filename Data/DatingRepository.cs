@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FunWebApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,20 @@ namespace FunWebApi.Data
 
             _context.Remove(entity);
             //throw new System.NotImplementedException();
+        }
+
+        public async  Task<Photo> GetMainPhotoForUser(int userid)
+        {
+           
+           return await _context.Photos.Where(x=>x.UserId == userid).FirstOrDefaultAsync(x=>x.IsMain);
+        }
+
+        public async  Task<Photo> GetPhoto(int id)
+        {
+
+            var Photo = await _context.Photos.FirstOrDefaultAsync(a =>a.Id == id);
+            return  Photo;
+       
         }
 
         public async Task<User> GetUser(int id)
